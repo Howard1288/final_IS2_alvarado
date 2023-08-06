@@ -97,7 +97,7 @@ class AplicacionController{
     }
 
     public static function buscarAPI(){
-        // $productos = Producto::all();
+      
         $aplicacion_nombre = $_GET['aplicacion_nombre'];
         $aplicacion_fecha_inicio = $_GET['aplicacion_fecha_inicio'];
        

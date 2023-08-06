@@ -98,7 +98,7 @@ class ProgramadorController{
     }
 
     public static function buscarAPI(){
-        // $productos = Producto::all();
+       
         $programador_grado = $_GET['programador_grado'];
         $programador_nombre = $_GET['programador_nombre'];
         $programador_apellido = $_GET['programador_apellido'];
