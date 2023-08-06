@@ -2,18 +2,19 @@
 
 namespace Controllers;
 
+use Aplicacion;
 use Exception;
-use Model\Programador;
+use Model\Aplicaciones;
 use MVC\Router;
 
-class ProgramadorController{
+class AplicacionesController{
     public static function index(Router $router){
-        $programador = Programador::all();
+        $aplicaciones = Aplicaciones::all();
         // $productos2 = Producto::all();
         // var_dump($productos);
         // exit;
-        $router->render('programador/index', [
-            'programador' => $programador,
+        $router->render('aplicaciones/index', [
+            'aplicaciones' => $aplicaciones,
             // 'productos2' => $productos2,
         ]);
 
@@ -21,8 +22,8 @@ class ProgramadorController{
 
     public static function guardarAPI(){
         try {
-            $programador = new Programador($_POST);
-            $resultado = $programador->crear();
+            $aplicacion = new Aplicacion($_POST);
+            $resultado = $aplicacion->crear();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
@@ -47,8 +48,8 @@ class ProgramadorController{
 
     public static function modificarAPI(){
         try {
-            $programador = new Programador($_POST);
-            $resultado = $programador->actualizar();
+            $aplicacion = new Aplicacion($_POST);
+            $resultado = $aplicacion->actualizar();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
@@ -73,10 +74,10 @@ class ProgramadorController{
 
     public static function eliminarAPI(){
         try {
-            $programador_id = $_POST['programador_id'];
-            $programador = Programador::find($programador_id);
-            $programador->programador_situacion = 0;
-            $resultado = $programador->actualizar();
+            $aplicacion_id = $_POST['aplicacion_id'];
+            $aplicacion = aplicacion::find($aplicacion_id);
+            $aplicacion->aplicacion_situacion = 0;
+            $resultado = $aplicacion->actualizar();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
@@ -101,26 +102,24 @@ class ProgramadorController{
 
     public static function buscarAPI(){
         // $productos = Producto::all();
-        $programador_grado = $_GET['programador_grado'];
-        $programador_nombre = $_GET['programador_nombre'];
-        $programador_apellido = $_GET['programador_apellido'];
+        $aplicacion_nombre = $_GET['aplicacion_nombre'];
+        $aplicacion_fecha_inicio = $_GET['aplicacion_fecha_inicio'];
+       
        
 
-        $sql = "SELECT * FROM programadores where programador_situacion = 1 ";
-        if($programador_grado != '') {
-            $sql.= " and programador_grado like '%$programador_grado%' ";
+        $sql = "SELECT * FROM aplicaciones where aplicacion_situacion = 1 ";
+        if($aplicacion_nombre != '') {
+            $sql.= " and aplicacion_nombre like '%$aplicacion_nombre%' ";
         }
-        if($programador_nombre != '') {
-            $sql.= " and programador_nombre like '%$programador_nombre%' ";
+        if($aplicacion_fecha_inicio != '') {
+            $sql.= " and aplicacion_fecha_inicio like '%$aplicacion_fecha_inicio%' ";
         }
-        if($programador_apellido != '') {
-            $sql.= " and programador_apellido = $programador_apellido ";
-        }
+        
         try {
             
-            $programadores = Programador::fetchArray($sql);
+            $aplicaciones = Aplicaciones::fetchArray($sql);
     
-            echo json_encode($programadores);
+            echo json_encode($aplicaciones);
         } catch (Exception $e) {
             echo json_encode([
                 'detalle' => $e->getMessage(),
