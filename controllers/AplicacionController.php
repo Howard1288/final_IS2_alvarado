@@ -2,20 +2,16 @@
 
 namespace Controllers;
 
-use Aplicacion;
 use Exception;
-use Model\Aplicaciones;
+use Model\Aplicacion;
 use MVC\Router;
 
-class AplicacionesController{
+class AplicacionController{
     public static function index(Router $router){
-        $aplicaciones = Aplicaciones::all();
-        // $productos2 = Producto::all();
-        // var_dump($productos);
-        // exit;
+        $aplicaciones = Aplicacion::all();
+
         $router->render('aplicaciones/index', [
             'aplicaciones' => $aplicaciones,
-            // 'productos2' => $productos2,
         ]);
 
     }
@@ -75,7 +71,7 @@ class AplicacionesController{
     public static function eliminarAPI(){
         try {
             $aplicacion_id = $_POST['aplicacion_id'];
-            $aplicacion = aplicacion::find($aplicacion_id);
+            $aplicacion = Aplicacion::find($aplicacion_id);
             $aplicacion->aplicacion_situacion = 0;
             $resultado = $aplicacion->actualizar();
 
@@ -117,7 +113,7 @@ class AplicacionesController{
         
         try {
             
-            $aplicaciones = Aplicaciones::fetchArray($sql);
+            $aplicaciones = Aplicacion::fetchArray($sql);
     
             echo json_encode($aplicaciones);
         } catch (Exception $e) {

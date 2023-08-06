@@ -1,59 +1,52 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once '../../modelos/Aplicacion.php';
-require_once '../../modelos/Programador.php';
-
-try {
-    $aplicacion = new Aplicacion($_GET);
-    $aplicaciones = $aplicacion->buscar();
-
-    $programador = new Programador($_GET);
-    $programadores = $programador->buscar();
-} catch (PDOException $e) {
-    $error = $e->getMessage();
-} catch (Exception $e2) {
-    $error = $e2->getMessage();
-}
-?>
-
-<?php include_once '../../includes/header.php'?>
-<?php include_once '../../includes/navbar.php'?>
-<div class="container">
-    <h1 class="text-center">Formulario de ingreso de programadores y aplicaciones</h1>
-    <div class="row justify-content-center">
-        <form action="/final_marin/controladores/asigna_programadores/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="asignacion_id_aplicacion">Aplicación</label>
-                    <select name="asignacion_id_aplicacion" id="asignacion_id_aplicacion" class="form-control">
-                        <option value="">SELECCIONE...</option>
-                        <?php foreach ($aplicaciones as $key => $aplicacion) : ?>
-                            <option value="<?= $aplicacion['APLICACION_ID'] ?>"><?= $aplicacion['APLICACION_NOMBRE'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-                </div>
+<h1 class="text-center">Formulario de productos</h1>
+<div class="row justify-content-center mb-5">
+    <form class="col-lg-8 border bg-light p-3" id="formularioAsignacion_programadores">
+        <input type="hidden" name="asignacion_id" id="asignacion_id">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="asignacion_id_aplicacion">ID APLICACION</label>
+                <input type="text" name="asignacion_id_aplicacion" id="asignacion_id_aplicacion" class="form-control">
             </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="asignacion_id_programador">Programador</label>
-                    <select name="asignacion_id_programador" id="asignacion_id_programador" class="form-control">
-                        <option value="">SELECCIONE...</option>
-                        <?php foreach ($programadores as $key => $programador) : ?>
-                            <option value="<?= $programador['PROGRAMADOR_ID'] ?>"><?= $programador['PROGRAMADOR_NOMBRE'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-                </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="asignacion_id_programador">ID PROGRAMDOR</label>
+                <input type="number" step="0.01" min="0" name="asignacion_id_programador" id="asignacion_id_programador" class="form-control">
             </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <button type="submit" class="btn btn-info w-100">Guardar</button>
-                </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <button type="submit" form="formularioAsignacion_programadores" id="btnGuardar" data-saludo= "hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
             </div>
-        </form>
+            <div class="col">
+                <button type="button" id="btnModificar" class="btn btn-warning w-100">Modificar</button>
+            </div>
+            <div class="col">
+                <button type="button" id="btnBuscar" class="btn btn-info w-100">Buscar</button>
+            </div>
+            <div class="col">
+                <button type="button" id="btnCancelar" class="btn btn-danger w-100">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row justify-content-center" id="divTabla">
+    <div class="col-lg-8">
+        <h2>Listado </h2>
+        <table class="table table-bordered table-hover" id="tablaAsignacion_programadores">
+            <thead class="table-dark">
+                <tr>
+                    <th>NO. </th>
+                    <th>ID APLICACION</th>
+                    <th>ID PROGRAMADOR</th>
+                    <th>MODIFICAR</th>
+                    <th>ELIMINAR</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 </div>
+<script src="<?= asset('./build/js/productos/index.js')  ?>"></script>
 
-<?php include_once '../../includes/footer.php'?>

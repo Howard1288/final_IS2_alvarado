@@ -1,18 +1,4 @@
-<?php
-require_once '../../modelos/Aplicacion.php';
-
-try {
-    $aplicacion = new Aplicacion();
-    $aplicaciones = $aplicacion->buscar();
-} catch (PDOException $e) {
-    $error = $e->getMessage();
-} catch (Exception $e2) {
-    $error = $e2->getMessage();
-}
-?>
-
-<?php include_once '../../includes/header.php' ?>
-<?php include_once '../../includes/navbar.php' ?>
+<h1 class="text-center">Progreso de Aplicaciones</h1>
 <div class="container">
     <h1 class="text-center">Formulario de búsqueda de Progreso de Aplicaciones</h1>
     <div class="row justify-content-center">
@@ -36,4 +22,5 @@ try {
         </form>
     </div>
 </div>
-<?php include_once '../../includes/footer.php' ?>
+<script src="<?= asset('./build/js/productos/index.js')  ?>"></script>
+
