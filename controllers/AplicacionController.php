@@ -9,7 +9,9 @@ use MVC\Router;
 class AplicacionController{
     public static function index(Router $router){
         $aplicaciones = Aplicacion::all();
-
+        
+        var_dump($aplicaciones);
+         exit;
         $router->render('aplicaciones/index', [
             'aplicaciones' => $aplicaciones,
         ]);

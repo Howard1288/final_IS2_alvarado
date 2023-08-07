@@ -1,7 +1,7 @@
     <div class="container">
         <h1 class="text-center">Formulario de registro de aplicaciones</h1>
         <div class="row justify-content-center">
-            <form action="/final_marin/controladores/aplicaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form class="col-lg-8 border bg-light p-3" id="formularioAplicacion">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="aplicacion_nombre">Nombre de la aplicacion</label>

@@ -2,7 +2,7 @@
 <div class="container">
     <h1 class="text-center">Formulario de búsqueda de Progreso de Aplicaciones</h1>
     <div class="row justify-content-center">
-        <form action="/final_marin/controladores/progreso_aplicacion/progreso_aplicacion.php" class="col-lg-8 border bg-light p-3">
+        <form class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
                     <label for="aplicacion_id">Aplicación</label>
