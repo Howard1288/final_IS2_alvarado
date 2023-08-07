@@ -3,6 +3,7 @@
 namespace Model;
 
 class Aplicacion extends ActiveRecord{
+    
     public static $tabla = 'aplicaciones';
     public static $columnasDB = ['aplicacion_nombre','aplicacion_fecha_inicio','aplicacion_situacion'];
     public static $idTabla = 'aplicacion_id';

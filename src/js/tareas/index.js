@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion} from "../funciones";
 
 const formulario = document.querySelector('form')
-const tablaProgramadores = document.getElementById('tablaProgramadores');
+const tablaProgramadores = document.getElementById('tablaTareas');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
 const btnGuardar = document.getElementById('btnGuardar');
@@ -84,7 +84,7 @@ const buscar = async () => {
         const respuesta = await fetch(url, config)
         const data = await respuesta.json();
         
-        tablaProgramadores.tBodies[0].innerHTML = ''
+        tablaTareas.tBodies[0].innerHTML = ''
         const fragment = document.createDocumentFragment();
         console.log(data);
         // return;

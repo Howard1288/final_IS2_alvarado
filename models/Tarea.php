@@ -2,6 +2,11 @@
 
 namespace Model;
 class Tarea extends ActiveRecord{
+    
+    public static $tabla = 'tareas';
+    public static $columnasDB = ['tarea_id_aplicacion','tarea_descripcion','tarea_estado','tarea_fecha','tarea_situacion'];
+    public static $idTabla = 'tarea_id';
+    
     public $tarea_id;
     public $tarea_id_aplicacion;
     public $tarea_descripcion;

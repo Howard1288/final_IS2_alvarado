@@ -10,8 +10,8 @@ class TareaController{
     public static function index(Router $router){
         $tarea = Tarea::all();
 
-        $router->render('tarea/index', [
-            'tarea' => $tarea,
+        $router->render('tareas/index', [
+            'tareas' => $tarea,
        
         ]);
 
@@ -120,9 +120,9 @@ class TareaController{
         }
         try {
             
-            $tarea = Tarea::fetchArray($sql);
+            $tareas = Tarea::fetchArray($sql);
     
-            echo json_encode($tarea);
+            echo json_encode($tareas);
         } catch (Exception $e) {
             echo json_encode([
                 'detalle' => $e->getMessage(),

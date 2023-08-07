@@ -22,4 +22,28 @@
             </form>
         </div>
     </div>
+    
+    </form>
+</div>
+<div class="row justify-content-center" id="divTabla">
+    <div class="col-lg-8">
+        <h2>Listado de Las Tareas</h2>
+        <table class="table table-bordered table-hover" id="tablaTareas">
+            <thead class="table-dark">
+                <tr>
+                    <th>NO. </th>
+                    <th>ID APLICACION</th>
+                    <th>DESCRIPCION</th>
+                    <th>ESTADO</th>
+                    <th>FECHA</th>
+                    <th>MODIFICAR</th>
+                    <th>ELIMINAR</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
     <script src="<?= asset('./build/js/aplicaciones/index.js')  ?>"></script>
