@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion} from "../funciones";
 
 const formulario = document.querySelector('form')
-const tablaProgramadores = document.getElementById('tablaTareas');
+const tablaTareas = document.getElementById('tablaTareas');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
 const btnGuardar = document.getElementById('btnGuardar');
@@ -107,8 +107,8 @@ const buscar = async () => {
                 buttonModificar.textContent = 'Modificar'
                 buttonEliminar.textContent = 'Eliminar'
 
-                buttonModificar.addEventListener('click', () => colocarDatos(tareas))
-                buttonEliminar.addEventListener('click', () => eliminar(tareas.tarea_id))
+                buttonModificar.addEventListener('click', () => colocarDatos(tarea))
+                buttonEliminar.addEventListener('click', () => eliminar(tarea.tarea_id))
 
                 td1.innerText = contador;
                 td2.innerText = tarea.tarea_id_aplicacion
@@ -126,6 +126,9 @@ const buscar = async () => {
                 tr.appendChild(td4)
                 tr.appendChild(td5)
                 tr.appendChild(td6)
+                tr.appendChild(td7)
+                tr.appendChild(td8)
+                tr.appendChild(td9)
 
                 fragment.appendChild(tr);
 

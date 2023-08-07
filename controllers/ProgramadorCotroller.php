@@ -8,11 +8,11 @@ use MVC\Router;
 
 class ProgramadorController{
     public static function index(Router $router){
-        $programador = Programador::all();
-        // var_dump($programador);
+        $programadores = Programador::all();
+        //  var_dump($programador);
         //  exit;
         $router->render('programadores/index', [
-            'programadores' => $programador,
+            'programadores' => $programadores,
        
         ]);
 
@@ -20,8 +20,8 @@ class ProgramadorController{
 
     public static function guardarAPI(){
         try {
-            $programador = new Programador($_POST);
-            $resultado = $programador->crear();
+            $programadores = new Programador($_POST);
+            $resultado = $programadores->crear();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
@@ -46,8 +46,8 @@ class ProgramadorController{
 
     public static function modificarAPI(){
         try {
-            $programador = new Programador($_POST);
-            $resultado = $programador->actualizar();
+            $programadores = new Programador($_POST);
+            $resultado = $programadores->actualizar();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([

@@ -25,3 +25,6 @@ class Tarea extends ActiveRecord{
     }
     
 }
+
+        
+?>

@@ -3,25 +3,25 @@
 namespace Controllers;
 
 use Exception;
-use Model\Tarea;
+use Model\Asignacion_programadores;
 use MVC\Router;
 
-class TareaController{
+class Asignacion_programadoresController{
     public static function index(Router $router){
-        $tareas = Tarea::all();
+        $asignacion_programadores = Asignacion_programadores::all();
         
-        // var_dump($tareas);
+        // var_dump($aplicaciones);
         //  exit;
-        $router->render('tareas/index', [
-            'tareas' => $tareas,
+        $router->render('asignacion_programadores/index', [
+            'asignacion_programadores' => $asignacion_programadores,
         ]);
 
     }
 
     public static function guardarAPI(){
         try {
-            $tareas = new Tarea($_POST);
-            $resultado = $tareas->crear();
+            $asignacion_programadores = new Asignacion_programadores($_POST);
+            $resultado = $asignacion_programadores->crear();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
@@ -46,8 +46,8 @@ class TareaController{
 
     public static function modificarAPI(){
         try {
-            $tareas = new Tarea($_POST);
-            $resultado = $tareas->actualizar();
+            $asignacion_programadores = new Asignacion_programadores($_POST);
+            $resultado = $asignacion_programadores->actualizar();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
@@ -72,10 +72,11 @@ class TareaController{
 
     public static function eliminarAPI(){
         try {
-            $tarea_id = $_POST['tarea_id'];
-            $tarea = Tarea::find($tarea_id);
-            $tarea->tarea_situacion = 0;
-            $resultado = $tarea->actualizar();
+            $asignacion_id = $_POST['asignacion_id'];
+            $asignacion_programadores = Asignacion_programadores::find($asignacion_id);
+            $asignacion_programadores->asignacion_id_aplicacion = 0;
+            $asignacion_programadores->asignacion_id_programador = 0;
+            $resultado = $asignacion_programadores->actualizar();
 
             if($resultado['resultado'] == 1){
                 echo json_encode([
@@ -100,32 +101,24 @@ class TareaController{
 
     public static function buscarAPI(){
       
-        $tarea_id_aplicacion = $_GET['tarea_id_aplicacion'];
-        $tarea_descripcion = $_GET['tarea_descripcion'];
-        $tarea_estado = $_GET['tarea_estado'];
-        $tarea_fecha = $_GET['tarea_fecha'];
+        $asignacion_id_aplicacion = $_GET['asignacion_id_aplicacion'];
+        $asignacion_id_programador = $_GET['asignacion_id_programador'];
        
        
 
-        $sql = "SELECT * FROM tareas where tarea_situacion = 1 ";
-        if($tarea_id_aplicacion != '') {
-            $sql.= " and tarea_id_aplicacion like '%$tarea_id_aplicacion%' ";
+        $sql = "SELECT * FROM asignacion_programadores ";
+        if($asignacion_id_aplicacion != '') {
+            $sql.= " and asignacion_id_aplicacion like '%$asignacion_id_aplicacion%' ";
         }
-        if($tarea_descripcion != '') {
-            $sql.= " and tarea_descripcion like '%$tarea_descripcion%' ";
-        }
-        if($tarea_estado != '') {
-            $sql.= " and tarea_estado like '%$tarea_estado%' ";
-        }
-        if($tarea_fecha != '') {
-            $sql.= " and tarea_fecha like '%$tarea_fecha%' ";
+        if($asignacion_id_programador != '') {
+            $sql.= " and asignacion_id_programador like '%$asignacion_id_programador%' ";
         }
         
         try {
             
-            $tareas = Tarea::fetchArray($sql);
+            $asignacion_programadores = Asignacion_programadores::fetchArray($sql);
     
-            echo json_encode($tareas);
+            echo json_encode($asignacion_programadores);
         } catch (Exception $e) {
             echo json_encode([
                 'detalle' => $e->getMessage(),

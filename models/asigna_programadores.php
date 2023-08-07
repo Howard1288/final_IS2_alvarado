@@ -1,6 +1,6 @@
 <?php
 namespace Model;
-class AsignacionProgramadores extends ActiveRecord{
+class Asignacion_programadores extends ActiveRecord{
     public $asignacion_id;
     public $asignacion_id_aplicacion;
     public $asignacion_id_programador;
