@@ -32,11 +32,11 @@ $router->post('/API/programadores/eliminar', [ProgramadorController::class,'elim
 $router->get('/API/programadores/buscar', [ProgramadorController::class,'buscarAPI'] );
 
 
-$router->get('/asignacion_programadores', [TareaController::class,'index'] );
-$router->post('/API/asignacion_programadores/guardar', [TareaController::class,'guardarAPI'] );
-$router->post('/API/asignacion_programadores/modificar', [TareaController::class,'modificarAPI'] );
-$router->post('/API/asignacion_programadores/eliminar', [TareaController::class,'eliminarAPI'] );
-$router->get('/API/asignacion_programadores/buscar', [TareaController::class,'buscarAPI'] );
+$router->get('/asignacion_programadores', [Asignacion_programadoresControllerController::class,'index'] );
+$router->post('/API/asignacion_programadores/guardar', [Asignacion_programadoresControllerController::class,'guardarAPI'] );
+$router->post('/API/asignacion_programadores/modificar', [Asignacion_programadoresControllerController::class,'modificarAPI'] );
+$router->post('/API/asignacion_programadores/eliminar', [Asignacion_programadoresControllerController::class,'eliminarAPI'] );
+$router->get('/API/asignacion_programadores/buscar', [Asignacion_programadoresControllerController::class,'buscarAPI'] );
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
