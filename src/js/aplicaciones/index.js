@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion} from "../funciones";
 
 const formulario = document.querySelector('form')
-const tablaProductos = document.getElementById('tablaAplicaciones');
+const tablaAplicaciones = document.getElementById('tablaAplicaciones');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
 const btnGuardar = document.getElementById('btnGuardar');
@@ -27,7 +27,7 @@ const guardar = async (evento) => {
 
     const body = new FormData(formulario)
     body.delete('aplicacion_id')
-    const url = '/final_IS2_alvarado/API/aplicacion/guardar';
+    const url = '/final_IS2_alvarado/API/aplicaciones/guardar';
     const config = {
         method : 'POST',
         // body: otroNombre
@@ -178,7 +178,7 @@ const modificar = async () => {
     }
 
     const body = new FormData(formulario)
-    const url = '/final_IS2_alvarado/API/aplicacion/modificar';
+    const url = '/final_IS2_alvarado/API/aplicaciones/modificar';
     const config = {
         method : 'POST',
         body

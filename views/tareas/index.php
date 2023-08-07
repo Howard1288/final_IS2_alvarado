@@ -62,5 +62,5 @@
         </table>
     </div>
 </div>
-<script src="<?= asset('./build/js/productos/index.js')  ?>"></script>
+<script src="<?= asset('./build/js/tareas/index.js')  ?>"></script>
 

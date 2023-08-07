@@ -1,4 +1,4 @@
-<h1 class="text-center">Formulario de productos</h1>
+<h1 class="text-center">Formulario de Aplicaciones</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioAsignacion_programadores">
         <input type="hidden" name="asignacion_id" id="asignacion_id">
@@ -48,5 +48,5 @@
         </table>
     </div>
 </div>
-<script src="<?= asset('./build/js/productos/index.js')  ?>"></script>
+<script src="<?= asset('./build/js/asignacion_programadores/index.js')  ?>"></script>
 
