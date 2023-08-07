@@ -1,7 +1,7 @@
     <div class="container">
         <h1 class="text-center">Formulario de registro de aplicaciones</h1>
         <div class="row justify-content-center">
-            <form class="col-lg-8 border bg-light p-3" id="formularioAplicacion">
+            <form class="col-lg-8 border bg-light p-3" id="formularioAplicaciones">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="aplicacion_nombre">Nombre de la aplicacion</label>
@@ -16,7 +16,7 @@
                 </div>
                 <div class="row mb-3">
             <div class="col">
-                <button type="submit" form="formularioProgramador" id="btnGuardar" data-saludo= "hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
+                <button type="submit" form="formularioAplicaciones" id="btnGuardar" data-saludo= "hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
             </div>
 
             <div class="col">
@@ -35,7 +35,7 @@
 <div class="row justify-content-center" id="divTabla">
     <div class="col-lg-8">
         <h2>Listado de Las Tareas</h2>
-        <table class="table table-bordered table-hover" id="tablaTareas">
+        <table class="table table-bordered table-hover" id="tablaAplicaciones">
             <thead class="table-dark">
                 <tr>
                     <th>NO. </th>

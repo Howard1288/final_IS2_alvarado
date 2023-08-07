@@ -7,6 +7,7 @@ use Controllers\AplicacionController;
 use Controllers\TareaController;
 use Controllers\ProgramadorController;
 use Controllers\Asignacion_programadorController;
+use Controllers\Progreso_aplicacionController;
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
@@ -37,6 +38,14 @@ $router->post('/API/asignacion_programadores/guardar', [Asignacion_programadorCo
 $router->post('/API/asignacion_programadores/modificar', [Asignacion_programadorController::class,'modificarAPI'] );
 $router->post('/API/asignacion_programadores/eliminar', [Asignacion_programadorController::class,'eliminarAPI'] );
 $router->get('/API/asignacion_programadores/buscar', [Asignacion_programadorController::class,'buscarAPI'] );
+
+
+$router->get('/progreso_aplicacion', [Progreso_aplicacionController::class,'index'] );
+$router->post('/API/progreso_aplicacion/guardar', [Progreso_aplicacionController::class,'guardarAPI'] );
+$router->post('/API/progreso_aplicacion/modificar', [Progreso_aplicacionController::class,'modificarAPI'] );
+$router->post('/API/progreso_aplicacion/eliminar', [Progreso_aplicacionController::class,'eliminarAPI'] );
+$router->get('/API/progreso_aplicacion/buscar', [Progreso_aplicacionController::class,'buscarAPI'] );
+
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

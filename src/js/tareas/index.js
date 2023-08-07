@@ -118,8 +118,8 @@ const buscar = async () => {
                 
                 
                 // ESTRUCTURANDO DOM
-                td4.appendChild(buttonModificar)
-                td5.appendChild(buttonEliminar)
+                td6.appendChild(buttonModificar)
+                td7.appendChild(buttonEliminar)
                 tr.appendChild(td1)
                 tr.appendChild(td2)
                 tr.appendChild(td3)
@@ -127,8 +127,7 @@ const buscar = async () => {
                 tr.appendChild(td5)
                 tr.appendChild(td6)
                 tr.appendChild(td7)
-                tr.appendChild(td8)
-                tr.appendChild(td9)
+
 
                 fragment.appendChild(tr);
 

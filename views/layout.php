@@ -42,6 +42,12 @@
                             <li>
                                 <a class="dropdown-item nav-link text-white " href="/final_IS2_alvarado/tareas"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Tareas</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_alvarado/asignacion_programadores"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Asignacion_Programadores</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item nav-link text-white " href="/final_IS2_alvarado/progreso_aplicacion"><i class="ms-lg-0 ms-2 bi bi-plus-circle me-2"></i>Progreso_Aplicacion</a>
+                            </li>
                         
                     
                         

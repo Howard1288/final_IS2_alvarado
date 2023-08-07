@@ -2,7 +2,7 @@ import { Dropdown } from "bootstrap";
 import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion} from "../funciones";
 
-const formulario = document.etElementById('formularioAplicacion')
+const formulario = document.etElementById('formularioAplicaciones')
 const tablaAplicaciones = document.getElementById('tablaAplicaciones');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
@@ -10,7 +10,7 @@ const btnGuardar = document.getElementById('btnGuardar');
 const btnCancelar = document.getElementById('btnCancelar');
 const divTabla = document.getElementById('divTabla');
 
-btnModificar.disabled = true
+btnModificar.enabled = true
 btnModificar.parentElement.style.display = 'none'
 btnCancelar.disabled = true
 btnCancelar.parentElement.style.display = 'none'
