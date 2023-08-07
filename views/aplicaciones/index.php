@@ -15,10 +15,17 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
-                    </div>
-                </div>
+            <div class="col">
+                <button type="submit" form="formularioProgramador" id="btnGuardar" data-saludo= "hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
+            </div>
+
+            <div class="col">
+                <button type="button" id="btnBuscar" class="btn btn-info w-100">Buscar</button>
+            </div>
+            <div class="col">
+                <button type="button" id="btnCancelar" class="btn btn-danger w-100">Cancelar</button>
+            </div>
+        </div>
             </form>
         </div>
     </div>

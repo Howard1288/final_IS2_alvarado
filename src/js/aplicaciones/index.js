@@ -2,7 +2,7 @@ import { Dropdown } from "bootstrap";
 import Swal from "sweetalert2";
 import { validarFormulario, Toast, confirmacion} from "../funciones";
 
-const formulario = document.querySelector('form')
+const formulario = document.etElementById('formularioAplicacion')
 const tablaAplicaciones = document.getElementById('tablaAplicaciones');
 const btnBuscar = document.getElementById('btnBuscar');
 const btnModificar = document.getElementById('btnModificar');
@@ -26,7 +26,7 @@ const guardar = async (evento) => {
     }
 
     const body = new FormData(formulario)
-    body.delete('aplicacion_id')
+    body.delete('programador_id')
     const url = '/final_IS2_alvarado/API/aplicaciones/guardar';
     const config = {
         method : 'POST',
@@ -73,6 +73,7 @@ const buscar = async () => {
 
     let aplicacion_nombre = formulario.aplicacion_nombre.value;
     let aplicacion_fecha_inicio = formulario.aplicacion_fecha_inicio.value;
+
     const url = `/final_IS2_alvarado/API/aplicaciones/buscar?aplicacion_nombre=${aplicacion_nombre}&aplicacion_fecha_inicio=${aplicacion_fecha_inicio}`;
     const config = {
         method : 'GET'
@@ -105,13 +106,14 @@ const buscar = async () => {
                 buttonModificar.textContent = 'Modificar'
                 buttonEliminar.textContent = 'Eliminar'
 
-                buttonModificar.addEventListener('click', () => colocarDatos(aplicacion))
-                buttonEliminar.addEventListener('click', () => eliminar(aplicacion.aplicacion_id))
+                buttonModificar.addEventListener('click', () => colocarDatos(programador))
+                buttonEliminar.addEventListener('click', () => eliminar(programador.programador_id))
 
                 td1.innerText = contador;
                 td2.innerText = aplicacion.aplicacion_nombre
                 td3.innerText = aplicacion.aplicacion_fecha_inicio
-                               
+                
+                
                 
                 // ESTRUCTURANDO DOM
                 td4.appendChild(buttonModificar)
@@ -121,7 +123,8 @@ const buscar = async () => {
                 tr.appendChild(td3)
                 tr.appendChild(td4)
                 tr.appendChild(td5)
-                
+                tr.appendChild(td6)
+
                 fragment.appendChild(tr);
 
                 contador++;
@@ -145,6 +148,7 @@ const colocarDatos = (datos) => {
     formulario.aplicacion_nombre.value = datos.aplicacion_nombre
     formulario.aplicacion_fecha_inicio.value = datos.aplicacion_fecha_inicio
     formulario.aplicacion_id.value = datos.aplicacion_id
+    
 
     btnGuardar.disabled = true
     btnGuardar.parentElement.style.display = 'none'
@@ -222,7 +226,7 @@ const eliminar = async (id) => {
     if(await confirmacion('warning','¿Desea eliminar este registro?')){
         const body = new FormData()
         body.append('aplicacion_id', id)
-        const url = '/final_IS2_alvarado/API/aplicacion/eliminar';
+        const url = '/final_IS2_alvarado/API/aplicaciones/eliminar';
         const config = {
             method : 'POST',
             body

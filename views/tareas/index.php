@@ -30,9 +30,7 @@
             <div class="col">
                 <button type="submit" form="formularioTareas" id="btnGuardar" data-saludo= "hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
             </div>
-            <div class="col">
-                <button type="button" id="btnModificar" class="btn btn-warning w-100">Modificar</button>
-            </div>
+
             <div class="col">
                 <button type="button" id="btnBuscar" class="btn btn-info w-100">Buscar</button>
             </div>
