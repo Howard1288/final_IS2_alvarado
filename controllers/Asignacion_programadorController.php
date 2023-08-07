@@ -6,7 +6,7 @@ use Exception;
 use Model\Asignacion_programadores;
 use MVC\Router;
 
-class Asignacion_programadoresController{
+class Asignacion_programadorController{
     public static function index(Router $router){
         $asignacion_programadores = Asignacion_programadores::all();
         

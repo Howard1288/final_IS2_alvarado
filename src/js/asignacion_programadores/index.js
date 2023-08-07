@@ -82,7 +82,7 @@ const buscar = async () => {
         const respuesta = await fetch(url, config)
         const data = await respuesta.json();
         
-        tablaProgramadores.tBodies[0].innerHTML = ''
+        tablaAsignacion_programadores.tBodies[0].innerHTML = ''
         const fragment = document.createDocumentFragment();
         console.log(data);
         // return;
