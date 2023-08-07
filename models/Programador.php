@@ -5,6 +5,7 @@ class Programador extends ActiveRecord{
     public static $tabla = 'programadores';
     public static $columnasDB = ['programador_grado','programador_nombre','programador_apellido','programador_situacion'];
     public static $idTabla = 'programador_id';
+
     public $programador_id;
     public $programador_grado;
     public $programador_nombre;

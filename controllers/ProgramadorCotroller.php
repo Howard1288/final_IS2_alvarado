@@ -9,9 +9,10 @@ use MVC\Router;
 class ProgramadorController{
     public static function index(Router $router){
         $programador = Programador::all();
-
-        $router->render('programador/index', [
-            'programador' => $programador,
+        // var_dump($programador);
+        //  exit;
+        $router->render('programadores/index', [
+            'programadores' => $programador,
        
         ]);
 
