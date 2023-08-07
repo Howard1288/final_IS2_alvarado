@@ -6,7 +6,7 @@ use Controllers\AppController;
 use Controllers\AplicacionController;
 use Controllers\TareaController;
 use Controllers\ProgramadorController;
-use Controllers\Asignacion_programadoresControllerController;
+use Controllers\Asignacion_programadoresController;
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
@@ -32,11 +32,11 @@ $router->post('/API/programadores/eliminar', [ProgramadorController::class,'elim
 $router->get('/API/programadores/buscar', [ProgramadorController::class,'buscarAPI'] );
 
 
-$router->get('/asignacion_programadores', [Asignacion_programadoresControllerController::class,'index'] );
-$router->post('/API/asignacion_programadores/guardar', [Asignacion_programadoresControllerController::class,'guardarAPI'] );
-$router->post('/API/asignacion_programadores/modificar', [Asignacion_programadoresControllerController::class,'modificarAPI'] );
-$router->post('/API/asignacion_programadores/eliminar', [Asignacion_programadoresControllerController::class,'eliminarAPI'] );
-$router->get('/API/asignacion_programadores/buscar', [Asignacion_programadoresControllerController::class,'buscarAPI'] );
+$router->get('/asignacion_programadores', [Asignacion_programadoresController::class,'index'] );
+$router->post('/API/asignacion_programadores/guardar', [Asignacion_programadoresController::class,'guardarAPI'] );
+$router->post('/API/asignacion_programadores/modificar', [Asignacion_programadoresController::class,'modificarAPI'] );
+$router->post('/API/asignacion_programadores/eliminar', [Asignacion_programadoresController::class,'eliminarAPI'] );
+$router->get('/API/asignacion_programadores/buscar', [Asignacion_programadoresController::class,'buscarAPI'] );
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
